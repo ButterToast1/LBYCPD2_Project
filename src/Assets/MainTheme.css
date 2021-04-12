@@ -1,0 +1,20 @@
+.tf-box {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #000000;
+    -fx-border-radius: 13px;
+    -fx-text-fill: black;
+}
+
+.black-button {
+    -fx-background-color: #030A45;
+    -fx-text-fill: #FFFFFF;
+}
+
+.heading {
+    -fx-font-family: Monsterrat;
+
+}
+
+.background {
+    -fx-background-color: #FFEDED;
+}
