@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/exampleJavaFx.iml" filepath="$PROJECT_DIR$/exampleJavaFx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Farmer's Disease Control Software.iml" filepath="$PROJECT_DIR$/Farmer's Disease Control Software.iml" />
     </modules>
   </component>
 </project>
