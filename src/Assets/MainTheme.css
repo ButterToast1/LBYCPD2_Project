@@ -18,3 +18,7 @@
 .background {
     -fx-background-color: #FFEDED;
 }
+
+.white-background {
+    -fx-background-color: #FFFFFF;
+}
