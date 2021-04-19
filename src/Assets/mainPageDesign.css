@@ -1,0 +1,17 @@
+.title {
+    -fx-font-family: "Montserrat SemiBold";
+}
+
+.regular {
+    -fx-font-family: Montserrat;
+}
+
+.blue_button {
+    -fx-font-family: "Montserrat SemiBold";
+    -fx-background-color: #030A45;
+    -fx-text-fill: #FFFFFF;
+}
+
+.menu_button {
+    -fx-font-family: "Montserrat SemiBold";
+}

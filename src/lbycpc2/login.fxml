@@ -39,14 +39,14 @@
                </font></Label>
             <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                <children>
-                  <Button mnemonicParsing="false" styleClass="black-button" stylesheets="@../Assets/MainTheme.css" text="Login">
+                  <Button mnemonicParsing="false" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Login">
                      <HBox.margin>
                         <Insets left="730.0" />
                      </HBox.margin>
                      <font>
                         <Font size="24.0" />
                      </font></Button>
-                  <Button mnemonicParsing="false" styleClass="black-button" stylesheets="@../Assets/MainTheme.css" text="Cancel">
+                  <Button mnemonicParsing="false" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Cancel">
                      <HBox.margin>
                         <Insets left="30.0" />
                      </HBox.margin>
