@@ -28,17 +28,28 @@ public class loginController {
 
     private Scanner x;
 
-    @FXML
-    public void push(ActionEvent event) throws IOException {
+    public void menuButton(ActionEvent event) throws IOException {
 
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
-        Scene mainMenuScene = new Scene(tableViewParent);
+        Parent mainMenuParent = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
+        Scene mainMenuScene = new Scene(mainMenuParent);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         openFile();
         readFile();
         closeFile();
+
+        if (emailTextField.getText().equals(email) && passwordField.getText().equals(password)){
+            window.setScene(mainMenuScene);
+            window.show();
+            System.out.println("variable emailTextField is: " + email + " while password is: "+ password);
+        }
+
+        else {
+            statusLabel.setVisible(true);
+            statusLabel.setText("Incorrect username or password.");
+        }
+
     }
 
     public void openFile() {

@@ -30,7 +30,7 @@
                <VBox.margin>
                   <Insets bottom="20.0" left="485.0" />
                </VBox.margin></PasswordField>
-            <Label text="Don't have an account? Sign up here!">
+            <Label fx:id="statusLabel" text="Don't have an account? Sign up here!">
                <VBox.margin>
                   <Insets bottom="30.0" left="492.0" />
                </VBox.margin>
@@ -39,7 +39,7 @@
                </font></Label>
             <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                <children>
-                  <Button mnemonicParsing="false" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Login">
+                  <Button mnemonicParsing="false" onAction="#menuButton" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Login">
                      <HBox.margin>
                         <Insets left="730.0" />
                      </HBox.margin>
