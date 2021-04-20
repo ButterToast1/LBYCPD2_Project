@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" styleClass="background" stylesheets="@../Assets/MainTheme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" styleClass="background" stylesheets="@../Assets/MainTheme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lbycpc2.loginController">
    <children>
       <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0">
          <children>
@@ -22,11 +22,11 @@
                   <Font size="50.0" />
                </font>
             </Label>
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="USERNAME" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
+            <TextField fx:id="emailTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="EMAIL" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
                <VBox.margin>
                   <Insets bottom="30.0" left="485.0" />
                </VBox.margin></TextField>
-            <PasswordField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="PASSWORD" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
+            <PasswordField fx:id="passwordField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="PASSWORD" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
                <VBox.margin>
                   <Insets bottom="20.0" left="485.0" />
                </VBox.margin></PasswordField>
