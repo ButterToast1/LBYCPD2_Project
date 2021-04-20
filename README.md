@@ -1,7 +1,6 @@
 # LBYCPD2_Project
 This is a project requirement for LBYCPC2.
 
-Introduction
 The farmer's disease control software is a JavaFX-based program that aims to help 
 farmers protect their crops and livestock from infectious diseases.
 This is done by picturing these sick plants or animals and posting them through
