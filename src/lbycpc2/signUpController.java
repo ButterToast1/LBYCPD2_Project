@@ -87,14 +87,14 @@ public class signUpController {
         FileWriter fw2 = new FileWriter(file2, true);
         PrintWriter pw2 = new PrintWriter(fw2);
 
-        firstName = fNameTextField.getText() + " ";
-        lastName = lNameTextField.getText() + " ";
+        //firstName = fNameTextField.getText() + " ";
+        //lastName = lNameTextField.getText() + " ";
         email = emailTextField.getText() + " ";
         password = passwordField.getText();
-        confirmPassword = confirmPasswordField.getText() + " ";
+        //confirmPassword = confirmPasswordField.getText();
 
         pw.print(email);
-        pw.print(password);
+        pw.println(password);
 
         pw.close();
         pw2.close();
