@@ -44,7 +44,7 @@ public class signUpController {
         //This line gets the Stage information
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        File file = new File("src/Database/accounts");
+        File file = new File("src/Database/conditions");
         FileWriter fw = new FileWriter(file, true);
         PrintWriter pw = new PrintWriter(fw);
 
@@ -83,7 +83,7 @@ public class signUpController {
         FileWriter fw = new FileWriter(file, true);
         PrintWriter pw = new PrintWriter(fw);
 
-        File file2 = new File("src/Database/accounts");
+        File file2 = new File("src/Database/profile");
         FileWriter fw2 = new FileWriter(file2, true);
         PrintWriter pw2 = new PrintWriter(fw2);
 

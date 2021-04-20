@@ -30,7 +30,7 @@ public class loginController {
 
     public void menuButton(ActionEvent event) throws IOException {
 
-        Parent mainMenuParent = FXMLLoader.load(getClass().getResource("feed.fxml"));
+        Parent mainMenuParent = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
         Scene mainMenuScene = new Scene(mainMenuParent);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -62,11 +62,11 @@ public class loginController {
     }
 
     public String readFile() throws IOException {
-        File file1 = new File("src/Database/accounts");
+        File file1 = new File("src/Database/profile");
         FileWriter fw = new FileWriter(file1, true);
         PrintWriter pw = new PrintWriter(fw);
 
-        File file2 = new File("src/Database/accounts");
+        File file2 = new File("src/Database/conditions");
         FileWriter fw2 = new FileWriter(file2, true);
         PrintWriter pw2 = new PrintWriter(fw2);
 
