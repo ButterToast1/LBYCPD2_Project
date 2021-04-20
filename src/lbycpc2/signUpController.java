@@ -44,7 +44,7 @@ public class signUpController {
         //This line gets the Stage information
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        File file = new File("C:\\Users\\User\\IdeaProjects\\Farmer's Disease Control Software\\src\\Database\\conditions");
+        File file = new File("src/Database/accounts");
         FileWriter fw = new FileWriter(file, true);
         PrintWriter pw = new PrintWriter(fw);
 
@@ -70,7 +70,7 @@ public class signUpController {
 
     public void openFile() {
         try {
-            x = new Scanner(new File("C:\\Users\\User\\IdeaProjects\\Farmer's Disease Control Software\\src\\Database\\accounts"));
+            x = new Scanner(new File("src/Database/accounts"));
             //y = new Formatter("C:\\Users\\User\\IdeaProjects\\LTOsoftware\\src\\assets\\accounts");
         }
         catch (Exception e) {
@@ -79,11 +79,11 @@ public class signUpController {
     }
 
     public void writeFile() throws IOException{
-        File file = new File("C:\\Users\\User\\IdeaProjects\\Farmer's Disease Control Software\\src\\Database\\accounts");
+        File file = new File("src/Database/accounts");
         FileWriter fw = new FileWriter(file, true);
         PrintWriter pw = new PrintWriter(fw);
 
-        File file2 = new File("C:\\Users\\User\\IdeaProjects\\Farmer's Disease Control Software\\src\\Database\\profile");
+        File file2 = new File("src/Database/accounts");
         FileWriter fw2 = new FileWriter(file2, true);
         PrintWriter pw2 = new PrintWriter(fw2);
 

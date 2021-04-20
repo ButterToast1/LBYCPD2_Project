@@ -30,7 +30,7 @@ public class loginController {
 
     public void menuButton(ActionEvent event) throws IOException {
 
-        Parent mainMenuParent = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
+        Parent mainMenuParent = FXMLLoader.load(getClass().getResource("feed.fxml"));
         Scene mainMenuScene = new Scene(mainMenuParent);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -53,7 +53,7 @@ public class loginController {
 
     public void openFile() {
         try {
-            x = new Scanner(new File("C:\\Users\\User\\IdeaProjects\\Farmer's Disease Control Software\\src\\Database\\accounts"));
+            x = new Scanner(new File("src/Database/accounts"));
         }
 
         catch (Exception e) {
@@ -62,11 +62,11 @@ public class loginController {
     }
 
     public String readFile() throws IOException {
-        File file1 = new File("C:\\Users\\User\\IdeaProjects\\Farmer's Disease Control Software\\src\\Database\\profile");
+        File file1 = new File("src/Database/accounts");
         FileWriter fw = new FileWriter(file1, true);
         PrintWriter pw = new PrintWriter(fw);
 
-        File file2 = new File("C:\\Users\\User\\IdeaProjects\\Farmer's Disease Control Software\\src\\Database\\conditions");
+        File file2 = new File("src/Database/accounts");
         FileWriter fw2 = new FileWriter(file2, true);
         PrintWriter pw2 = new PrintWriter(fw2);
 
