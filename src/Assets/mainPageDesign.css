@@ -8,10 +8,13 @@
 
 .blue_button {
     -fx-font-family: "Montserrat SemiBold";
+    -fx-font-size: 36px;
     -fx-background-color: #030A45;
     -fx-text-fill: #FFFFFF;
 }
 
 .menu_button {
     -fx-font-family: "Montserrat SemiBold";
+    -fx-font-size: 24px;
+    -fx-background-color: transparent;
 }
