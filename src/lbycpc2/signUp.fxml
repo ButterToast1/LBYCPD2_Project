@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" styleClass="background" stylesheets="@../Assets/MainTheme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" styleClass="background" stylesheets="@../Assets/MainTheme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lbycpc2.signUpController">
    <children>
       <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0">
          <children>
@@ -22,30 +22,30 @@
                   <Font size="50.0" />
                </font>
             </Label>
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="FIRST NAME" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
+            <TextField fx:id="fNameTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="FIRST NAME" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
                <VBox.margin>
                   <Insets bottom="30.0" left="485.0" />
                </VBox.margin></TextField>
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="LAST NAME" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
+            <TextField fx:id="lNameTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="LAST NAME" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
                <VBox.margin>
                   <Insets bottom="30.0" left="485.0" />
                </VBox.margin>
             </TextField>
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="EMAIL" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
+            <TextField fx:id="emailTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="EMAIL" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
                <VBox.margin>
                   <Insets bottom="30.0" left="485.0" />
                </VBox.margin>
             </TextField>
-            <PasswordField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="PASSWORD" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
+            <PasswordField fx:id="passwordField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="PASSWORD" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
                <VBox.margin>
                   <Insets bottom="20.0" left="485.0" />
                </VBox.margin></PasswordField>
-            <PasswordField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="CONFIRM PASSWORD" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
+            <PasswordField fx:id="confirmPasswordField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="CONFIRM PASSWORD" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
                <VBox.margin>
                   <Insets bottom="30.0" left="485.0" />
                </VBox.margin>
             </PasswordField>
-            <Label text="ERROR MESSAGE" textFill="RED" visible="false">
+            <Label fx:id="statusLabel" text="ERROR MESSAGE" textFill="RED" visible="false">
                <VBox.margin>
                   <Insets bottom="30.0" left="492.0" />
                </VBox.margin>
@@ -54,7 +54,7 @@
                </font></Label>
             <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                <children>
-                  <Button mnemonicParsing="false" styleClass="black-button" stylesheets="@../Assets/MainTheme.css" text="Login">
+                  <Button mnemonicParsing="false" onAction="#menuButton" styleClass="black-button" stylesheets="@../Assets/MainTheme.css" text="Login">
                      <HBox.margin>
                         <Insets left="730.0" />
                      </HBox.margin>

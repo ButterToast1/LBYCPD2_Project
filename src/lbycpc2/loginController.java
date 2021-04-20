@@ -49,7 +49,6 @@ public class loginController {
             statusLabel.setVisible(true);
             statusLabel.setText("Incorrect username or password.");
         }
-
     }
 
     public void openFile() {

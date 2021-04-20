@@ -17,7 +17,7 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <Button layoutX="438.0" layoutY="620.0" mnemonicParsing="false" onAction="#loginButton" styleClass="blue_button" stylesheets="@../Assets/mainPageDesign.css" text="Join Now!">
+      <Button layoutX="438.0" layoutY="620.0" mnemonicParsing="false" onAction="#signUpButton" styleClass="blue_button" stylesheets="@../Assets/mainPageDesign.css" text="Join Now!">
          <font>
             <Font size="36.0" />
          </font>

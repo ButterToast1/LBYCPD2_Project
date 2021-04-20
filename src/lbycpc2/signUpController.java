@@ -27,6 +27,7 @@ public class signUpController {
     public TextField emailTextField;
     public PasswordField passwordField;
     public PasswordField confirmPasswordField;
+    public Label statusLabel;
 
     public String firstName;
     public String lastName;
@@ -37,7 +38,34 @@ public class signUpController {
     private Scanner x;
 
     public void menuButton(ActionEvent event) throws IOException {
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+        Scene mainMenuScene = new Scene(tableViewParent);
 
+        //This line gets the Stage information
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        File file = new File("C:\\Users\\User\\IdeaProjects\\Farmer's Disease Control Software\\src\\Database\\conditions");
+        FileWriter fw = new FileWriter(file, true);
+        PrintWriter pw = new PrintWriter(fw);
+
+        openFile();
+        writeFile();
+        readFile();
+        closeFile();
+
+        if (emailTextField.getText().equals(email) && passwordField.getText().equals(password)){
+            pw.println("true");
+            pw.close();
+
+            window.setScene(mainMenuScene);
+            window.show();
+
+        }
+
+        else {
+            statusLabel.setVisible(true);
+            statusLabel.setText("Incorrect username or password.");
+        }
     }
 
     public void openFile() {
@@ -62,7 +90,7 @@ public class signUpController {
         firstName = fNameTextField.getText() + " ";
         lastName = lNameTextField.getText() + " ";
         email = emailTextField.getText() + " ";
-        password = passwordField.getText() + " ";
+        password = passwordField.getText();
         confirmPassword = confirmPasswordField.getText() + " ";
 
         pw.print(email);
@@ -70,6 +98,17 @@ public class signUpController {
 
         pw.close();
         pw2.close();
+    }
+
+    public void readFile() {
+        email = x.next();
+        password = x.next();
+
+        while(x.hasNext() && !email.equals(emailTextField.getText())) {
+
+            email = x.next();
+            password = x.next();
+        }
     }
 
     public void closeFile() {
