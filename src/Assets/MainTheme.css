@@ -6,7 +6,7 @@
 }
 
 .black_button {
-    -fx-background-color: #030A45;
+    -fx-background-color: #A36969;
     -fx-text-fill: #FFFFFF;
 }
 
@@ -21,4 +21,10 @@
 
 .white-background {
     -fx-background-color: #FFFFFF;
+}
+
+.white-font {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Harlow Solid Italic";
+    -fx-font-size: 28px;
 }

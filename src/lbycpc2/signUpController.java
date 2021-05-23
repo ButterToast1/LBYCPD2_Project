@@ -58,7 +58,6 @@ public class signUpController {
 
             window.setScene(mainMenuScene);
             window.show();
-
         }
 
         else {

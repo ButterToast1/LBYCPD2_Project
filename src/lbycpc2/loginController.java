@@ -3,6 +3,7 @@ package lbycpc2;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,32 +14,126 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class loginController {
+import java.net.URL;
+
+public class loginController implements Initializable {
 
     public TextField emailTextField;
     public PasswordField passwordField;
-    public Label statusLabel;
 
     public String email;
     public String password;
+    public String email2;
+    public String password2;
 
     private Scanner x;
 
+
+    //FROM YOUTUBE VIDEO
     @FXML
     private Button cancelButton;
+    @FXML
+    private Label statusLabel;
+    @FXML
+    private ImageView brandingImageView;
+    @FXML
+    private ImageView lockImageView;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        File brandingFile = new File ("src/Assets/tempLogo.png");
+        Image brandingImage = new Image(brandingFile.toURI().toString());
+        brandingImageView.setImage(brandingImage);
+
+        File lockFile = new File ("src/Assets/lock.png");
+        Image lockImage = new Image(lockFile.toURI().toString());
+        lockImageView.setImage(lockImage);
+    }
 
     public void cancelButtonAction(ActionEvent event) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
+
+    public void loginButtonAction(ActionEvent event) throws IOException{
+        Parent mainMenuParent = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
+        Scene mainMenuScene = new Scene(mainMenuParent);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo", "root", "Ngpmctct_2346");
+
+            Statement statement = connection.createStatement();
+
+            ResultSet resultSet = statement.executeQuery("select * from users");
+
+            //TEST
+            // email = emailTextField.getText();
+            // password = passwordField.getText();
+
+            email = emailTextField.getText();
+            password = passwordField.getText();
+            email2 = "1";
+            password2 = "2";
+
+            System.out.println("the email is: " + email);
+            System.out.println("the password is: " + password);
+
+            while (resultSet.next() && !email.equals(email2)) {
+                email2 = resultSet.getString("email_address");
+                password2 = resultSet.getString("password");
+            }
+
+            System.out.println("the email found is: " + email);
+            System.out.println("the password found is: " + password);
+
+            if (emailTextField.getText().equals(email) && passwordField.getText().equals(password2)){
+                window.setScene(mainMenuScene);
+                window.show();
+                System.out.println("variable emailTextField is: " + email + " while password is: "+ password);
+            }
+
+            else {
+                statusLabel.setVisible(true);
+                statusLabel.setText("Incorrect username or password.");
+            }
+            //END TEST
+
+
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString("email_address"));
+            }
+
+            connection.close();
+            statement.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void readSQLfile() {
+
+    }
+
+
 
 
 
