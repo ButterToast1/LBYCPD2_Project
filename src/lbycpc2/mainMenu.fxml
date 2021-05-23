@@ -2,11 +2,15 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" styleClass="background" stylesheets="@../Assets/MainTheme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lbycpc2.mainPageController">
    <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a36969" height="200.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1440.0" />
       <Label layoutX="146.0" layoutY="296.0" styleClass="title" stylesheets="@../Assets/mainPageDesign.css" text="Help Spread Awareness">
          <font>
             <Font size="60.0" />
@@ -25,5 +29,15 @@
       <Button layoutX="876.0" layoutY="51.0" mnemonicParsing="false" styleClass="menu_button" stylesheets="@../Assets/mainPageDesign.css" text="Home" />
       <Button layoutX="1022.0" layoutY="51.0" mnemonicParsing="false" onAction="#loginButton" styleClass="menu_button" stylesheets="@../Assets/mainPageDesign.css" text="Login" />
       <Button layoutX="1168.0" layoutY="51.0" mnemonicParsing="false" styleClass="menu_button" stylesheets="@../Assets/mainPageDesign.css" text="About" />
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/tempLogo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="718.0" fitWidth="785.0" layoutX="653.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/planting.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

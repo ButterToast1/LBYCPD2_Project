@@ -35,7 +35,7 @@ public class mainPageController {
     }
 
     public void signUpButton(ActionEvent event) throws IOException {
-        Parent signUpParent = FXMLLoader.load(getClass().getResource("signUp.fxml"));
+        Parent signUpParent = FXMLLoader.load(getClass().getResource("signUp2.fxml"));
         Scene signUpScene = new Scene(signUpParent);
 
         //This line gets the Stage information
