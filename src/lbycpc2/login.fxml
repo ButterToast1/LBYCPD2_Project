@@ -46,7 +46,7 @@
                      <font>
                         <Font size="24.0" />
                      </font></Button>
-                  <Button mnemonicParsing="false" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Cancel">
+                  <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelButtonAction" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Cancel">
                      <HBox.margin>
                         <Insets left="30.0" />
                      </HBox.margin>

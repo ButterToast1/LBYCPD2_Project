@@ -9,6 +9,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+
+import javafx.scene.control.Button;
+import javafx.event.ActionEvent;
+
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -28,6 +32,18 @@ public class loginController {
 
     private Scanner x;
 
+    @FXML
+    private Button cancelButton;
+
+    public void cancelButtonAction(ActionEvent event) {
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
+        stage.close();
+    }
+
+
+
+
+    //ORIGINAL functions for going to main menu using local database (text files)
     public void menuButton(ActionEvent event) throws IOException {
 
         Parent mainMenuParent = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
