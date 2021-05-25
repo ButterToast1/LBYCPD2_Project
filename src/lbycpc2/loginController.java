@@ -79,7 +79,7 @@ public class loginController implements Initializable {
 
 
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo", "root", "Ngpmctct_2346");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/sZpaR7ogSu", "sZpaR7ogSu", "megoO8jjLA");
 
             Statement statement = connection.createStatement();
 

@@ -83,7 +83,7 @@ public class signUpController implements Initializable {
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo", "root", "Ngpmctct_2346");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/sZpaR7ogSu", "sZpaR7ogSu", "megoO8jjLA");
 
             Statement statement = connection.createStatement();
 
