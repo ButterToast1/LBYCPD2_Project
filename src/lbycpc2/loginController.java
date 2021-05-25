@@ -72,7 +72,7 @@ public class loginController implements Initializable {
     }
 
     public void loginButtonAction(ActionEvent event) throws IOException{
-        Parent mainMenuParent = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
+        Parent mainMenuParent = FXMLLoader.load(getClass().getResource("feed.fxml"));
         Scene mainMenuScene = new Scene(mainMenuParent);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

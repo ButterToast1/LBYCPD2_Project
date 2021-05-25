@@ -23,7 +23,7 @@
             </Label>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="165.0" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Yes">
+                  <Button mnemonicParsing="false" onAction="#yesButtonAction" prefHeight="32.0" prefWidth="165.0" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Yes">
                      <HBox.margin>
                         <Insets right="50.0" top="60.0" />
                      </HBox.margin>
@@ -31,7 +31,7 @@
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="165.0" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="No">
+                  <Button mnemonicParsing="false" onAction="#noButtonAction" prefHeight="32.0" prefWidth="165.0" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="No">
                      <HBox.margin>
                         <Insets top="60.0" />
                      </HBox.margin>

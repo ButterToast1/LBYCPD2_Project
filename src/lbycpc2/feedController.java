@@ -23,7 +23,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class feedController implements Initializable {
+public class feedController {
 
     @FXML
     private Button cancelButton;
@@ -34,16 +34,7 @@ public class feedController implements Initializable {
     @FXML
     private ImageView lockImageView;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        File brandingFile = new File ("src/Assets/tempLogo.png");
-        Image brandingImage = new Image(brandingFile.toURI().toString());
-        brandingImageView.setImage(brandingImage);
 
-        File lockFile = new File ("src/Assets/lock.png");
-        Image lockImage = new Image(lockFile.toURI().toString());
-        lockImageView.setImage(lockImage);
-    }
 
     public void cancelButtonAction(ActionEvent event) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
@@ -80,6 +71,17 @@ public class feedController implements Initializable {
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         window.setScene(logoutScene);
+        window.show();
+    }
+
+    public void createPostButtonAction(ActionEvent event) throws IOException{
+        Parent createPostParent = FXMLLoader.load(getClass().getResource("createPost.fxml"));
+        Scene createPostScene = new Scene(createPostParent);
+
+        //This line gets the Stage information
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        window.setScene(createPostScene);
         window.show();
     }
 }
