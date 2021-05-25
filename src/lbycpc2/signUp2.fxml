@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" styleClass="background" stylesheets="@../Assets/MainTheme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lbycpc2.loginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" styleClass="background" stylesheets="@../Assets/MainTheme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lbycpc2.signUpController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a36969" height="1024.0" stroke="TRANSPARENT" strokeType="INSIDE" width="766.0" />
       <ImageView fx:id="brandingImageView" fitHeight="444.0" fitWidth="570.0" layoutX="102.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
@@ -38,12 +38,12 @@
                   <Font size="50.0" />
                </font>
             </Label>
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="First name" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
+            <TextField fx:id="fNameTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="First name" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
                <VBox.margin>
                   <Insets bottom="30.0" left="867.0" />
                </VBox.margin>
             </TextField>
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="Last name" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
+            <TextField fx:id="lNameTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="Last name" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
                <VBox.margin>
                   <Insets bottom="30.0" left="867.0" />
                </VBox.margin>
@@ -58,7 +58,7 @@
                   <Insets bottom="20.0" left="867.0" />
                </VBox.margin>
             </PasswordField>
-            <PasswordField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="CONFIRM PASSWORD" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
+            <PasswordField fx:id="confirmPasswordField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="CONFIRM PASSWORD" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
                <VBox.margin>
                   <Insets bottom="30.0" left="867.0" />
                </VBox.margin>
@@ -71,7 +71,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="470.0" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Sign Up">
+            <Button mnemonicParsing="false" onAction="#menuButtonAction" prefHeight="49.0" prefWidth="470.0" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Sign Up">
                <font>
                   <Font size="24.0" />
                </font>

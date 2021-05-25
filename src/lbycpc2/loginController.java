@@ -12,7 +12,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import javafx.scene.control.Button;
-import javafx.event.ActionEvent;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -22,10 +21,12 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
@@ -38,8 +39,8 @@ public class loginController implements Initializable {
 
     public String email;
     public String password;
-    public String email2;
-    public String password2;
+    public String emailFinder;
+    public String passwordFinder;
 
     private Scanner x;
 
@@ -90,21 +91,23 @@ public class loginController implements Initializable {
 
             email = emailTextField.getText();
             password = passwordField.getText();
-            email2 = "1";
-            password2 = "2";
+
+            //This is to give these objects a temporary value
+            emailFinder = "1";
+            passwordFinder = "2";
 
             System.out.println("the email is: " + email);
             System.out.println("the password is: " + password);
 
-            while (resultSet.next() && !email.equals(email2)) {
-                email2 = resultSet.getString("email_address");
-                password2 = resultSet.getString("password");
+            while (resultSet.next() && !email.equals(emailFinder)) {
+                emailFinder = resultSet.getString("email_address");
+                passwordFinder = resultSet.getString("password");
             }
 
             System.out.println("the email found is: " + email);
             System.out.println("the password found is: " + password);
 
-            if (emailTextField.getText().equals(email) && passwordField.getText().equals(password2)){
+            if (emailTextField.getText().equals(emailFinder) && passwordField.getText().equals(passwordFinder)){
                 window.setScene(mainMenuScene);
                 window.show();
                 System.out.println("variable emailTextField is: " + email + " while password is: "+ password);

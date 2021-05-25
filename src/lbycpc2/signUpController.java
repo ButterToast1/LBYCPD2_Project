@@ -22,6 +22,10 @@ import java.lang.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
@@ -33,12 +37,16 @@ public class signUpController implements Initializable {
     public TextField emailTextField;
     public PasswordField passwordField;
     public PasswordField confirmPasswordField;
+    public String insertQuery;
 
     public String firstName;
     public String lastName;
     public String email;
     public String password;
     public String confirmPassword;
+
+    public String emailFinder;
+    public String passwordFinder;
 
     private Scanner x;
 
@@ -65,6 +73,48 @@ public class signUpController implements Initializable {
     public void cancelButtonAction(ActionEvent event) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
+    }
+
+    public void menuButtonAction(ActionEvent event) throws IOException {
+        Parent mainMenuParent = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
+        Scene mainMenuScene = new Scene(mainMenuParent);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo", "root", "Ngpmctct_2346");
+
+            Statement statement = connection.createStatement();
+
+            ResultSet resultSet = statement.executeQuery("select * from users");
+
+            firstName = fNameTextField.getText();
+            lastName = lNameTextField.getText();
+            email = emailTextField.getText();
+            password = passwordField.getText();
+
+            String insertQuery = "INSERT INTO users VALUES (DEFAULT, '"+firstName+"', '"+lastName+"', '"+password+"', '"+email+"')";
+            statement.executeUpdate(insertQuery);
+            System.out.println("Inserted");
+
+            emailFinder = "1";
+            passwordFinder = "2";
+
+
+            window.setScene(mainMenuScene);
+            window.show();
+            System.out.println("variable emailTextField is: " + email + " while password is: "+ password);
+
+
+
+
+            statement.close();
+            connection.close();
+            resultSet.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void menuButton(ActionEvent event) throws IOException {

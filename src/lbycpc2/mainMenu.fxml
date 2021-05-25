@@ -29,12 +29,12 @@
       <Button layoutX="876.0" layoutY="51.0" mnemonicParsing="false" styleClass="menu_button" stylesheets="@../Assets/mainPageDesign.css" text="Home" />
       <Button layoutX="1022.0" layoutY="51.0" mnemonicParsing="false" onAction="#loginButton" styleClass="menu_button" stylesheets="@../Assets/mainPageDesign.css" text="Login" />
       <Button layoutX="1168.0" layoutY="51.0" mnemonicParsing="false" styleClass="menu_button" stylesheets="@../Assets/mainPageDesign.css" text="About" />
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="brandingImageView" fitHeight="200.0" fitWidth="200.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Assets/tempLogo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="718.0" fitWidth="785.0" layoutX="653.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="plantingImageView" fitHeight="718.0" fitWidth="785.0" layoutX="653.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Assets/planting.png" />
          </image>
