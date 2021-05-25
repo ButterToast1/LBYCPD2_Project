@@ -20,7 +20,7 @@
             <Image url="@../Assets/tempLogo.png" />
          </image>
       </ImageView>
-      <VBox layoutX="-14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0">
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0">
          <children>
             <ImageView fx:id="lockImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <VBox.margin>
@@ -48,24 +48,29 @@
                   <Insets bottom="30.0" left="867.0" />
                </VBox.margin>
             </TextField>
+            <TextField fx:id="birthdateTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="Birthday (i.e. 1990-01-01)" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
+               <VBox.margin>
+                  <Insets bottom="30.0" left="867.0" />
+               </VBox.margin>
+            </TextField>
             <TextField fx:id="emailTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="EMAIL" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
                <VBox.margin>
                   <Insets bottom="30.0" left="867.0" />
                </VBox.margin>
             </TextField>
-            <PasswordField fx:id="passwordField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="PASSWORD" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
-               <VBox.margin>
-                  <Insets bottom="20.0" left="867.0" />
-               </VBox.margin>
-            </PasswordField>
-            <PasswordField fx:id="confirmPasswordField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="CONFIRM PASSWORD" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
+            <PasswordField fx:id="passwordField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="PASSWORD" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
                <VBox.margin>
                   <Insets bottom="30.0" left="867.0" />
                </VBox.margin>
             </PasswordField>
+            <PasswordField fx:id="confirmPasswordField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="CONFIRM PASSWORD" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
+               <VBox.margin>
+                  <Insets left="867.0" />
+               </VBox.margin>
+            </PasswordField>
             <Label fx:id="statusLabel" text="Don't have an account? Sign up here!" visible="false">
                <VBox.margin>
-                  <Insets bottom="50.0" left="877.0" />
+                  <Insets bottom="10.0" left="877.0" top="5.0" />
                </VBox.margin>
                <font>
                   <Font size="24.0" />

@@ -117,12 +117,11 @@ public class loginController implements Initializable {
                 statusLabel.setVisible(true);
                 statusLabel.setText("Incorrect username or password.");
             }
+
+            readFile();
             //END TEST
 
 
-            while (resultSet.next()) {
-                System.out.println(resultSet.getString("email_address"));
-            }
 
             connection.close();
             statement.close();
@@ -132,9 +131,7 @@ public class loginController implements Initializable {
         }
     }
 
-    public void readSQLfile() {
 
-    }
 
 
 
@@ -180,23 +177,9 @@ public class loginController implements Initializable {
         FileWriter fw = new FileWriter(file1, true);
         PrintWriter pw = new PrintWriter(fw);
 
-        File file2 = new File("src/Database/conditions");
-        FileWriter fw2 = new FileWriter(file2, true);
-        PrintWriter pw2 = new PrintWriter(fw2);
-
-        email = x.next();
-        password = x.next();
-
-        while (x.hasNext() && !email.equals(emailTextField.getText())) {
-            email = x.next();
-            password = x.next();
-        }
 
         pw.println(email);
         pw.close();
-
-        pw2.println("false");
-        pw2.close();
 
         return email;
     }

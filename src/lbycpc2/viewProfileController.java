@@ -1,40 +1,90 @@
 package lbycpc2;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.lang.*;
+
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class feedController {
+public class viewProfileController implements Initializable {
 
-    @FXML
-    private Button cancelButton;
-    @FXML
-    private Label statusLabel;
-    @FXML
-    private ImageView brandingImageView;
-    @FXML
-    private ImageView lockImageView;
+    public String email;
+    public String emailFinder;
+    public String firstNameFinder;
+    public String birthdateFinder;
+
+    public Label fullNameLabel;
+    public Label birthdateLabel;
+    public Label emailLabel;
+
+    private Scanner y;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            y = new Scanner(new File("src/Database/profile"));
+        } catch (Exception e) {
+            System.out.println("could not find file");
+        }
+
+        readFile();
+    }
+
+    public void readFile() {
 
 
+        email = y.next();
+
+        while (y.hasNext()) {
+            email = y.next();
+        }
+
+        System.out.println("the email is: " + email);
+
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo", "root", "Ngpmctct_2346");
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("select * from users");
+
+            emailFinder = "1";
+
+            while (resultSet.next() && !email.equals(emailFinder)) {
+                firstNameFinder = resultSet.getString("first_name");
+                birthdateFinder = resultSet.getString("birthdate");
+                emailFinder = resultSet.getString("email_address");
+            }
+
+            fullNameLabel.setText(firstNameFinder);
+            birthdateLabel.setText(birthdateFinder);
+            emailLabel.setText(emailFinder);
+
+            statement.close();
+            connection.close();
+            resultSet.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
+        y.close();
+    }
 
     public void homeButtonAction(ActionEvent event) throws IOException{
         Parent feedParent = FXMLLoader.load(getClass().getResource("feed.fxml"));
@@ -79,4 +129,6 @@ public class feedController {
         window.setScene(createPostScene);
         window.show();
     }
+
+
 }

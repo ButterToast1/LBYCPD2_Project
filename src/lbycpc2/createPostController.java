@@ -28,6 +28,56 @@ public class createPostController {
 
     private Scanner x;
 
+    public void homeButtonAction(ActionEvent event) throws IOException{
+        Parent feedParent = FXMLLoader.load(getClass().getResource("feed.fxml"));
+        Scene feedScene = new Scene(feedParent);
+
+        //This line gets the Stage information
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        window.setScene(feedScene);
+        window.show();
+    }
+
+    public void profileButtonAction(ActionEvent event) throws IOException{
+        Parent profileParent = FXMLLoader.load(getClass().getResource("viewProfile.fxml"));
+        Scene profileScene = new Scene(profileParent);
+
+        //This line gets the Stage information
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        window.setScene(profileScene);
+        window.show();
+    }
+
+    public void logoutButtonAction(ActionEvent event) throws IOException{
+        Parent logoutParent = FXMLLoader.load(getClass().getResource("logoutPrompt.fxml"));
+        Scene logoutScene = new Scene(logoutParent);
+
+        //This line gets the Stage information
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        window.setScene(logoutScene);
+        window.show();
+    }
+
+    public void createPostButtonAction(ActionEvent event) throws IOException{
+        Parent createPostParent = FXMLLoader.load(getClass().getResource("createPost.fxml"));
+        Scene createPostScene = new Scene(createPostParent);
+
+        //This line gets the Stage information
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        window.setScene(createPostScene);
+        window.show();
+    }
+
+
+
+
+
+
+
     public void openFile() {
         try {
             x = new Scanner(new File("src/Database/posts"));

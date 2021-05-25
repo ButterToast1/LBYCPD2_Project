@@ -34,16 +34,17 @@ public class signUpController implements Initializable {
 
     public TextField fNameTextField;
     public TextField lNameTextField;
+    public TextField birthdateTextField;
     public TextField emailTextField;
     public PasswordField passwordField;
     public PasswordField confirmPasswordField;
-    public String insertQuery;
 
     public String firstName;
     public String lastName;
     public String email;
     public String password;
     public String confirmPassword;
+    public String birthdate;
 
     public String emailFinder;
     public String passwordFinder;
@@ -90,23 +91,22 @@ public class signUpController implements Initializable {
 
             firstName = fNameTextField.getText();
             lastName = lNameTextField.getText();
+            birthdate = birthdateTextField.getText();
             email = emailTextField.getText();
             password = passwordField.getText();
 
-            String insertQuery = "INSERT INTO users VALUES (DEFAULT, '"+firstName+"', '"+lastName+"', '"+password+"', '"+email+"')";
+            String insertQuery = "INSERT INTO users VALUES (DEFAULT, '"+firstName+"', '"+lastName+"', '"+birthdate+"','"+password+"', '"+email+"')";
             statement.executeUpdate(insertQuery);
             System.out.println("Inserted");
+
+            writeFile();
 
             emailFinder = "1";
             passwordFinder = "2";
 
-
             window.setScene(mainMenuScene);
             window.show();
             System.out.println("variable emailTextField is: " + email + " while password is: "+ password);
-
-
-
 
             statement.close();
             connection.close();
@@ -117,6 +117,9 @@ public class signUpController implements Initializable {
         }
     }
 
+
+
+    //OLD functions
     public void menuButton(ActionEvent event) throws IOException {
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
         Scene mainMenuScene = new Scene(tableViewParent);
@@ -174,6 +177,8 @@ public class signUpController implements Initializable {
 
         pw.print(email);
         pw.println(password);
+
+        pw2.println(email);
 
         pw.close();
         pw2.close();
