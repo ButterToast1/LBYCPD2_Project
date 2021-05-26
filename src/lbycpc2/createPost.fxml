@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -20,7 +21,7 @@
             </Text>
             <Text layoutX="14.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Tags" wrappingWidth="87.0" />
             <Button layoutX="14.0" layoutY="74.0" mnemonicParsing="false" onAction="#homeButtonAction" prefHeight="32.0" prefWidth="70.0" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Home" />
-            <Button layoutX="14.0" layoutY="117.0" mnemonicParsing="false" onAction="#createPostButtonAction" prefHeight="32.0" prefWidth="70.0" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Post" />
+            <Button layoutX="14.0" layoutY="117.0" mnemonicParsing="false" onAction="#postButtonAction" prefHeight="32.0" prefWidth="70.0" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Post" />
             <Button layoutX="14.0" layoutY="160.0" mnemonicParsing="false" onAction="#profileButtonAction" prefHeight="32.0" prefWidth="87.0" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="View Profile" />
             <Button layoutX="14.0" layoutY="333.0" mnemonicParsing="false" onAction="#logoutButtonAction" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Logout" />
             <TextField layoutX="14.0" layoutY="244.0" prefHeight="26.0" prefWidth="150.0" />
@@ -31,14 +32,17 @@
       </AnchorPane>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
-            <Text layoutX="52.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User" />
-            <Button layoutX="306.0" layoutY="359.0" mnemonicParsing="false" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Post" />
-            <Button layoutX="238.0" layoutY="359.0" mnemonicParsing="false" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Cancel" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Label fx:id="fullNameLabel" layoutX="52.0" layoutY="65.0" text="User">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
             <Text layoutX="52.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description/context" wrappingWidth="293.0" />
-            <TextArea layoutX="52.0" layoutY="144.0" prefHeight="148.0" prefWidth="293.0" />
             <Button layoutX="201.0" layoutY="112.0" mnemonicParsing="false" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Add Image" />
             <Button layoutX="285.0" layoutY="112.0" mnemonicParsing="false" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Add File" />
+            <TextArea fx:id="textArea" layoutX="52.0" layoutY="144.0" prefHeight="148.0" prefWidth="293.0" wrapText="true" />
+            <Button layoutX="238.0" layoutY="359.0" mnemonicParsing="false" onAction="#homeButtonAction" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Cancel" />
+            <Button layoutX="306.0" layoutY="359.0" mnemonicParsing="false" onAction="#createPostButtonAction" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Post" />
          </children>
       </AnchorPane>
    </items>

@@ -42,31 +42,49 @@
                <VBox.margin>
                   <Insets bottom="30.0" left="867.0" />
                </VBox.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
             </TextField>
             <TextField fx:id="lNameTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="Last name" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
                <VBox.margin>
                   <Insets bottom="30.0" left="867.0" />
                </VBox.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
             </TextField>
             <TextField fx:id="birthdateTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="Birthday (i.e. 1990-01-01)" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
                <VBox.margin>
                   <Insets bottom="30.0" left="867.0" />
                </VBox.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
             </TextField>
-            <TextField fx:id="emailTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="EMAIL" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
+            <TextField fx:id="emailTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="Email" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
                <VBox.margin>
                   <Insets bottom="30.0" left="867.0" />
                </VBox.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
             </TextField>
-            <PasswordField fx:id="passwordField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="PASSWORD" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
+            <PasswordField fx:id="passwordField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="Password" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
                <VBox.margin>
                   <Insets bottom="30.0" left="867.0" />
                </VBox.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
             </PasswordField>
-            <PasswordField fx:id="confirmPasswordField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="CONFIRM PASSWORD" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
+            <PasswordField fx:id="confirmPasswordField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="470.0" promptText="Confirm Password" styleClass="tf-box" stylesheets="@../Assets/MainTheme.css">
                <VBox.margin>
                   <Insets left="867.0" />
                </VBox.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
             </PasswordField>
             <Label fx:id="statusLabel" text="Don't have an account? Sign up here!" visible="false">
                <VBox.margin>

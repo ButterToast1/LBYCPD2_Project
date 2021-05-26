@@ -48,6 +48,7 @@ public class signUpController implements Initializable {
 
     public String emailFinder;
     public String passwordFinder;
+    public int customerIDFinder;
 
     private Scanner x;
 
@@ -99,10 +100,13 @@ public class signUpController implements Initializable {
             statement.executeUpdate(insertQuery);
             System.out.println("Inserted");
 
-            writeFile();
-
             emailFinder = "1";
-            passwordFinder = "2";
+
+            //scans the customer-id and email
+            readFile();
+
+            //writes customer_id and email to text files
+            writeFile();
 
             window.setScene(mainMenuScene);
             window.show();
@@ -169,6 +173,10 @@ public class signUpController implements Initializable {
         FileWriter fw2 = new FileWriter(file2, true);
         PrintWriter pw2 = new PrintWriter(fw2);
 
+        File file3 = new File("src/Database/customer_id");
+        FileWriter fw3 = new FileWriter(file3, true);
+        PrintWriter pw3 = new PrintWriter(fw3);
+
         //firstName = fNameTextField.getText() + " ";
         //lastName = lNameTextField.getText() + " ";
         email = emailTextField.getText() + " ";
@@ -180,18 +188,38 @@ public class signUpController implements Initializable {
 
         pw2.println(email);
 
+        pw3.println(customerIDFinder);
+
+
         pw.close();
+        fw.close();
         pw2.close();
+        fw2.close();
+        pw3.close();
+        fw3.close();
     }
 
     public void readFile() {
-        email = x.next();
-        password = x.next();
 
-        while(x.hasNext() && !email.equals(emailTextField.getText())) {
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/sZpaR7ogSu", "sZpaR7ogSu", "megoO8jjLA");
 
-            email = x.next();
-            password = x.next();
+            Statement statement = connection.createStatement();
+
+            ResultSet resultSet = statement.executeQuery("select * from users");
+
+            emailFinder = "1";
+
+            while (resultSet.next() && !email.equals(emailFinder)) {
+                customerIDFinder = resultSet.getInt("customer_id");
+                emailFinder = resultSet.getString("email_address");
+            }
+
+            connection.close();
+            statement.close();
+            resultSet.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

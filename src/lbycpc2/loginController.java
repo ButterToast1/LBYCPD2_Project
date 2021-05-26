@@ -41,6 +41,7 @@ public class loginController implements Initializable {
     public String password;
     public String emailFinder;
     public String passwordFinder;
+    public int customerIDFinder;
 
     private Scanner x;
 
@@ -100,10 +101,12 @@ public class loginController implements Initializable {
             System.out.println("the password is: " + password);
 
             while (resultSet.next() && !email.equals(emailFinder)) {
+                customerIDFinder = resultSet.getInt("customer_id");
                 emailFinder = resultSet.getString("email_address");
                 passwordFinder = resultSet.getString("password");
             }
 
+            System.out.println("the customer ID found is: " + customerIDFinder);
             System.out.println("the email found is: " + email);
             System.out.println("the password found is: " + password);
 
@@ -177,10 +180,17 @@ public class loginController implements Initializable {
         FileWriter fw = new FileWriter(file1, true);
         PrintWriter pw = new PrintWriter(fw);
 
+        File file2 = new File("src/Database/customer_id");
+        FileWriter fw2 = new FileWriter(file2, true);
+        PrintWriter pw2 = new PrintWriter(fw2);
 
         pw.println(email);
-        pw.close();
+        pw2.println(customerIDFinder);
 
+        pw.close();
+        fw.close();
+        pw2.close();
+        fw2.close();
         return email;
     }
 

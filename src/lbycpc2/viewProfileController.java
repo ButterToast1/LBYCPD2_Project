@@ -26,7 +26,10 @@ public class viewProfileController implements Initializable {
     public String email;
     public String emailFinder;
     public String firstNameFinder;
+    public String lastNameFinder;
     public String birthdateFinder;
+    public String output1;
+    public String output2;
 
     public Label fullNameLabel;
     public Label birthdateLabel;
@@ -57,7 +60,7 @@ public class viewProfileController implements Initializable {
         System.out.println("the email is: " + email);
 
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo", "root", "Ngpmctct_2346");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/sZpaR7ogSu", "sZpaR7ogSu", "megoO8jjLA");
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("select * from users");
 
@@ -65,11 +68,16 @@ public class viewProfileController implements Initializable {
 
             while (resultSet.next() && !email.equals(emailFinder)) {
                 firstNameFinder = resultSet.getString("first_name");
+                lastNameFinder = resultSet.getString("last_name");
                 birthdateFinder = resultSet.getString("birthdate");
                 emailFinder = resultSet.getString("email_address");
             }
 
-            fullNameLabel.setText(firstNameFinder);
+            output1 = firstNameFinder.substring(0, 1).toUpperCase() + firstNameFinder.substring(1);
+            output2 = lastNameFinder.substring(0, 1).toUpperCase() + lastNameFinder.substring(1);
+
+
+            fullNameLabel.setText(output1 + " " + output2);
             birthdateLabel.setText(birthdateFinder);
             emailLabel.setText(emailFinder);
 
