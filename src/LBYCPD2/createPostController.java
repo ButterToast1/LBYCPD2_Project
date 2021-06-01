@@ -1,7 +1,6 @@
-package lbycpc2;
+package LBYCPD2;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -9,12 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
-import java.io.FileWriter;
-import java.io.PrintWriter;
 import java.lang.*;
 
 import java.io.File;
@@ -26,8 +21,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.Scanner;
-
-import java.time.LocalDate;
 
 public class createPostController implements Initializable {
 

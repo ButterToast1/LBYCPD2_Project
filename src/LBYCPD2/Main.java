@@ -1,4 +1,4 @@
-package lbycpc2;
+package LBYCPD2;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
