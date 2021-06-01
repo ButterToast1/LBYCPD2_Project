@@ -103,6 +103,9 @@ public class createPostController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        x.close();
+        y.close();
     }
 
     public void createPostButtonAction(ActionEvent event) throws IOException {
