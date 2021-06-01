@@ -40,7 +40,6 @@ public class feedController implements Initializable {
     private ImageView lockImageView;
 
 
-    public String email;
     public String postIDFinder;
     public String customerIDFinder;
     public String customerIDFinder2;
@@ -53,7 +52,6 @@ public class feedController implements Initializable {
     public String firstNameFinder;
     public String lastNameFinder;
 
-    private Scanner x;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
