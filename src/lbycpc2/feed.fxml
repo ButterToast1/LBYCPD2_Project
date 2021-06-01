@@ -42,7 +42,7 @@
             <Label layoutX="51.0" layoutY="305.0" text="Comment" />
             <TextField layoutX="52.0" layoutY="327.0" />
             <Button layoutX="51.0" layoutY="359.0" mnemonicParsing="false" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="View Comments" />
-            <Button layoutX="308.0" layoutY="359.0" mnemonicParsing="false" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Next Post" />
+            <Button layoutX="308.0" layoutY="359.0" mnemonicParsing="false" onAction="#nextPostButtonAction" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Next Post" />
          </children>
       </AnchorPane>
   </items>

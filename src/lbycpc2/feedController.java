@@ -9,7 +9,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
@@ -43,6 +42,7 @@ public class feedController implements Initializable {
     public String customerIDFinder;
     public String customerIDFinder2;
     public String descriptionFinder;
+    public int postIDInt;
 
     public String firstNameFinder;
     public String lastNameFinder;
@@ -66,6 +66,8 @@ public class feedController implements Initializable {
             while (resultSet.next()) {
                 customerIDFinder = resultSet.getString("customer_id");
                 descriptionFinder = resultSet.getString("description");
+                postIDFinder = resultSet.getString("post_id");
+                postIDInt = resultSet.getInt("post_id");
             }
 
             customerIDFinder2 = "test";
@@ -82,6 +84,7 @@ public class feedController implements Initializable {
             System.out.println(descriptionFinder);
             System.out.println(customerIDFinder);
             System.out.println(customerIDFinder2);
+            System.out.println("The post ID is: " + postIDInt);
             System.out.println(firstNameFinder);
             System.out.println(lastNameFinder);
             // END TEST
@@ -100,7 +103,37 @@ public class feedController implements Initializable {
     }
 
     public void readFile() {
+    }
 
+    public void nextPostButtonAction(ActionEvent event) throws IOException {
+
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/sZpaR7ogSu", "sZpaR7ogSu", "megoO8jjLA");
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("select * from posts");
+            postIDInt = postIDInt - 1;
+            Integer i = postIDInt;
+
+            String y = "test";
+            while (resultSet.next() && !i.toString().equals(y)) {
+                y = resultSet.getString("post_id");
+                descriptionFinder = resultSet.getString("description");
+            }
+
+            descriptionLabel.setText(descriptionFinder);
+
+            //TEST
+            System.out.println(i);
+            System.out.println("The new postIDInt is: " + y);
+            //END test
+
+            connection.close();
+            statement.close();
+            resultSet.close();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void homeButtonAction(ActionEvent event) throws IOException{
@@ -112,6 +145,8 @@ public class feedController implements Initializable {
 
         window.setScene(feedScene);
         window.show();
+
+
     }
 
     public void profileButtonAction(ActionEvent event) throws IOException{
