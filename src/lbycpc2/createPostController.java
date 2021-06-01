@@ -34,7 +34,6 @@ public class createPostController implements Initializable {
     public TextArea textArea;
 
     public String description;
-
     public String email;
     public String emailFinder;
     public String firstNameFinder;
@@ -113,22 +112,21 @@ public class createPostController implements Initializable {
 
             //connection from users
             Connection connection = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/sZpaR7ogSu", "sZpaR7ogSu", "megoO8jjLA");
-
             Statement statement = connection.createStatement();
-
             ResultSet resultSet = statement.executeQuery("select * from users");
 
             //connection from posts
             Connection connection2 = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/sZpaR7ogSu", "sZpaR7ogSu", "megoO8jjLA");
-
             Statement statement2 = connection.createStatement();
-
             ResultSet resultSet2 = statement.executeQuery("select * from posts");
 
             description = textArea.getText();
-            System.out.println(description);
 
-            // Adds
+            //TEST
+            System.out.println(description);
+            //END test
+
+            // Adds input to database
             String insertQuery = "INSERT INTO posts VALUES (DEFAULT, '"+customerID+"', '"+description+"', NULL, '"+java.time.LocalDate.now()+"')";
             statement.executeUpdate(insertQuery);
             System.out.println("Inserted");

@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
@@ -32,6 +33,8 @@ public class feedController implements Initializable {
     @FXML
     private Label userLabel;
     @FXML
+    private TextField commentTextField;
+    @FXML
     private ImageView brandingImageView;
     @FXML
     private ImageView lockImageView;
@@ -42,7 +45,10 @@ public class feedController implements Initializable {
     public String customerIDFinder;
     public String customerIDFinder2;
     public String descriptionFinder;
+    public String comment;
     public int postIDInt;
+
+    public String y;
 
     public String firstNameFinder;
     public String lastNameFinder;
@@ -51,8 +57,6 @@ public class feedController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        // readFile();
 
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/sZpaR7ogSu", "sZpaR7ogSu", "megoO8jjLA");
@@ -68,6 +72,7 @@ public class feedController implements Initializable {
                 descriptionFinder = resultSet.getString("description");
                 postIDFinder = resultSet.getString("post_id");
                 postIDInt = resultSet.getInt("post_id");
+                y = resultSet.getString("post_id");
             }
 
             customerIDFinder2 = "test";
@@ -102,8 +107,6 @@ public class feedController implements Initializable {
         }
     }
 
-    public void readFile() {
-    }
 
     public void nextPostButtonAction(ActionEvent event) throws IOException {
 
@@ -119,7 +122,7 @@ public class feedController implements Initializable {
             postIDInt = postIDInt - 1;
             Integer i = postIDInt;
 
-            String y = "test";
+            y = "test";
             while (resultSet.next() && !i.toString().equals(y)) {
                 y = resultSet.getString("post_id");
                 customerIDFinder = resultSet.getString("customer_id");
@@ -132,7 +135,7 @@ public class feedController implements Initializable {
                 firstNameFinder = resultSet2.getString("first_name");
                 lastNameFinder = resultSet2.getString("last_name");
             }
-            
+
             userLabel.setText(firstNameFinder + " " + lastNameFinder);
             descriptionLabel.setText(descriptionFinder);
 
@@ -145,7 +148,37 @@ public class feedController implements Initializable {
             statement.close();
             resultSet.close();
 
+            connection2.close();
+            statement2.close();
+            resultSet2.close();
+
         } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void commentButtonAction(ActionEvent event) throws IOException {
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/sZpaR7ogSu", "sZpaR7ogSu", "megoO8jjLA");
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("select * from posts");
+
+            comment = commentTextField.getText();
+
+            //TEST
+            System.out.println(comment);
+            //END Test
+
+            // Adds input to database
+            String updateQuery = "UPDATE posts SET comments = '"+comment+"' WHERE post_id = ('"+y+"')";
+            statement.executeUpdate(updateQuery);
+            System.out.println("Inserted");
+
+            connection.close();
+            statement.close();
+            resultSet.close();
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

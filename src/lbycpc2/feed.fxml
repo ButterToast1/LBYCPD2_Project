@@ -40,8 +40,8 @@
             <Label fx:id="descriptionLabel" alignment="TOP_LEFT" layoutX="25.0" layoutY="71.0" prefHeight="216.0" prefWidth="315.0" text="Description/Context" wrapText="true" />
             <RadioButton layoutX="272.0" layoutY="290.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="72.0" text="Like" />
             <Label layoutX="51.0" layoutY="305.0" text="Comment" />
-            <TextField layoutX="52.0" layoutY="327.0" />
-            <Button layoutX="51.0" layoutY="359.0" mnemonicParsing="false" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="View Comments" />
+            <TextField fx:id="commentTextField" layoutX="52.0" layoutY="327.0" />
+            <Button layoutX="51.0" layoutY="359.0" mnemonicParsing="false" onAction="#commentButtonAction" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Post Comment" />
             <Button layoutX="308.0" layoutY="359.0" mnemonicParsing="false" onAction="#nextPostButtonAction" styleClass="black_button" stylesheets="@../Assets/MainTheme.css" text="Next Post" />
          </children>
       </AnchorPane>

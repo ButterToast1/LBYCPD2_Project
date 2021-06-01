@@ -81,9 +81,7 @@ public class loginController implements Initializable {
 
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/sZpaR7ogSu", "sZpaR7ogSu", "megoO8jjLA");
-
             Statement statement = connection.createStatement();
-
             ResultSet resultSet = statement.executeQuery("select * from users");
 
             //TEST
