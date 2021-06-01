@@ -144,6 +144,15 @@ public class createPostController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        Parent feedParent = FXMLLoader.load(getClass().getResource("feed.fxml"));
+        Scene feedScene = new Scene(feedParent);
+
+        //This line gets the Stage information
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        window.setScene(feedScene);
+        window.show();
     }
 
 

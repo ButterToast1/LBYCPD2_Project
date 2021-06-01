@@ -111,15 +111,29 @@ public class feedController implements Initializable {
             Connection connection = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/sZpaR7ogSu", "sZpaR7ogSu", "megoO8jjLA");
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("select * from posts");
+
+            Connection connection2 = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/sZpaR7ogSu", "sZpaR7ogSu", "megoO8jjLA");
+            Statement statement2 = connection2.createStatement();
+            ResultSet resultSet2 = statement2.executeQuery("select * from users");
+
             postIDInt = postIDInt - 1;
             Integer i = postIDInt;
 
             String y = "test";
             while (resultSet.next() && !i.toString().equals(y)) {
                 y = resultSet.getString("post_id");
+                customerIDFinder = resultSet.getString("customer_id");
                 descriptionFinder = resultSet.getString("description");
             }
 
+            customerIDFinder2 = "test";
+            while (resultSet2.next() && !customerIDFinder.equals(customerIDFinder2)) {
+                customerIDFinder2 = resultSet2.getString("customer_id");
+                firstNameFinder = resultSet2.getString("first_name");
+                lastNameFinder = resultSet2.getString("last_name");
+            }
+            
+            userLabel.setText(firstNameFinder + " " + lastNameFinder);
             descriptionLabel.setText(descriptionFinder);
 
             //TEST
