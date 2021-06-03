@@ -7,10 +7,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 
@@ -26,17 +24,13 @@ import java.util.ResourceBundle;
 public class feedController implements Initializable {
 
     @FXML
-    private Button cancelButton;
-    @FXML
     private Label descriptionLabel;
     @FXML
     private Label userLabel;
     @FXML
     private TextField commentTextField;
     @FXML
-    private ImageView brandingImageView;
-    @FXML
-    private ImageView lockImageView;
+    private Label commentLabel;
 
 
     public String postIDFinder;
@@ -44,6 +38,7 @@ public class feedController implements Initializable {
     public String customerIDFinder2;
     public String descriptionFinder;
     public String comment;
+    public String commentFinder;
     public int postIDInt;
 
     public String y;
@@ -69,6 +64,7 @@ public class feedController implements Initializable {
                 descriptionFinder = resultSet.getString("description");
                 postIDFinder = resultSet.getString("post_id");
                 postIDInt = resultSet.getInt("post_id");
+                commentFinder = resultSet.getString("comments");
                 y = resultSet.getString("post_id");
             }
 
@@ -81,6 +77,7 @@ public class feedController implements Initializable {
 
             userLabel.setText(firstNameFinder + " " + lastNameFinder);
             descriptionLabel.setText(descriptionFinder);
+            commentLabel.setText(commentFinder);
 
             //TEST
             System.out.println(descriptionFinder);
@@ -105,7 +102,7 @@ public class feedController implements Initializable {
     }
 
 
-    public void nextPostButtonAction(ActionEvent event) throws IOException {
+    public void nextPostButtonAction(ActionEvent event) {
 
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/sZpaR7ogSu", "sZpaR7ogSu", "megoO8jjLA");
@@ -124,6 +121,7 @@ public class feedController implements Initializable {
                 y = resultSet.getString("post_id");
                 customerIDFinder = resultSet.getString("customer_id");
                 descriptionFinder = resultSet.getString("description");
+                commentFinder = resultSet.getString("comments");
             }
 
             customerIDFinder2 = "test";
@@ -135,6 +133,7 @@ public class feedController implements Initializable {
 
             userLabel.setText(firstNameFinder + " " + lastNameFinder);
             descriptionLabel.setText(descriptionFinder);
+            commentLabel.setText(commentFinder);
 
             //TEST
             System.out.println(i);
@@ -154,7 +153,7 @@ public class feedController implements Initializable {
         }
     }
 
-    public void commentButtonAction(ActionEvent event) throws IOException {
+    public void commentButtonAction(ActionEvent event) {
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/sZpaR7ogSu", "sZpaR7ogSu", "megoO8jjLA");
             Statement statement = connection.createStatement();
@@ -170,6 +169,8 @@ public class feedController implements Initializable {
             String updateQuery = "UPDATE posts SET comments = '"+comment+"' WHERE post_id = ('"+y+"')";
             statement.executeUpdate(updateQuery);
             System.out.println("Inserted");
+
+            commentLabel.setText(comment);
 
             connection.close();
             statement.close();
