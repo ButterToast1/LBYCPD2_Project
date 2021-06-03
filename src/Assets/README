@@ -1,0 +1,18 @@
+As the program starts running, the user is introduced by a introductory page about the program.
+The user has two choices: Either to login, or sign up. If the user clicks the login button,
+the user is directed to a login screen window where he/she can enter an email and its corresponding
+password in the text fields. if the email is not found in the database or the password is incorrect,
+then a display message is displayed, saying that one of the inputs is wrong. Going back, if the user prefers
+to sign in, he is greeted with more text fields, such as first name, last name, birthdate, and confirm password.
+After the user enters the followed information and clicks the sign up button, the information inputted will be
+added to the database for accounts. The user is then directed to the feed, where the latest posts are displayed.
+The user can click the 'next post' button to look at other posts found in the database and display them in the
+program. The user can also type and post a comment on that post. that comment will be displayed in the program
+and be stored in that post in the database. There are other buttons found in the feed controller. These are:
+home button, post button, view profile button, and logout button. The home button directs the user to the feed.
+The feed serves as the home page of the user. the post button directs the user to a text area where the user can
+type something and post them, to be inserted in the post database. The view profile button shows the personal
+information of the account used to log in. Finally, the logout button brings the user to a window, asking if
+he/she would want to logout the account. if the user clicked yes, the user will be brought back to the login
+window. As a last note, all the account information and personal information can be accessed an manipulated
+in the remotemysql.com site.
